@@ -1,0 +1,31 @@
+#:kivy 2.1.0
+
+<FlatButton@ButtonBehavior+Label>:
+    font_size: 16
+
+<classifyWindow>:
+    id: main_win
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: 60
+        #size_hint_x: 60
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Access Control"
+            bold: True
+            size_hint_x: .9
+ 
