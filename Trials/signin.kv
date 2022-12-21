@@ -1,0 +1,67 @@
+#:kivy 2.1.0
+
+<SigninWindow>:
+    orientation: "vertical"
+    spacing: 5
+
+    BoxLayout:
+        size_hint_y: 0.5
+        id: camera_or_image
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        size_hint_y: 0.1
+        id: camera_button_layout
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        size_hint_y: 0.2
+        BoxLayout:
+            size_hint_x: 0.6
+            Button:
+                id: button1
+                text: "button1"
+            Button:
+                id: button2
+                text: "button2"
+            Button:
+                id: button3
+                text: "button3"
+        BoxLayout:
+            size_hint_x: 0.4
+            orientation: "vertical"
+            canvas.before:
+                Color:
+                    rgba: (.06, .45, .45, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            BoxLayout:
+                Label:
+                    text: "Enter the count: "
+                TextInput:
+                    id: number_of_objects
+                    hint_text: "Enter number"
+            BoxLayout:
+                Label:
+                    text: "Enter the weight: "
+                TextInput:
+                    id: number_of_objects
+                    hint_text: "Enter weight"
+    BoxLayout:
+        size_hint_y: 0.2
+        Button:
+            id: capture_button
+            text: "Capture"
+            on_release: root.capture()
+        Button:
+            id: next_button
+            text: "Next"
